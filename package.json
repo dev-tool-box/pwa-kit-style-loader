@@ -21,7 +21,7 @@
     "style-loader"
   ],
   "author": "Abhisek Maiti <abhisekmaiti19@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "@salesforce/pwa-kit-dev": ">=3"
   },
@@ -33,5 +33,10 @@
     "postcss-loader": "^8.2.0",
     "style-loader": "^4.0.0"
   },
-  "license": "MIT"
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8"
+  }
 }

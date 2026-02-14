@@ -19,7 +19,7 @@ Built to be:
 Salesforce PWA Kit does not enable **global / vanilla CSS imports** out of the box.
 
 Developers often need to:
-- dig into PWA Kit webpack configs
+- dig into PWA Kit webpack config
 - add `css-loader`, `style-loader`, `postcss-loader`
 - configure PostCSS manually
 - risk breaking existing setups
