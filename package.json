@@ -1,6 +1,6 @@
 {
   "name": "pwa-style-loader",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Vanilla CSS support for Salesforce PWA Kit (one-command setup)",
   "bin": {
     "pwa-style-loader": "bin/init.js"
