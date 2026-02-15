@@ -6,10 +6,7 @@ const path = require("path");
 const readline = require("readline");
 
 (async () => {
-  // ---- Load chalk (ESM-only in v5) ----
   const chalk = (await import("chalk")).default;
-
-  // ---- Branding ----
   console.log(
     chalk.cyan.bold("\n🚀 pwa-style-loader") +
       chalk.gray("\nby Abhisek Maiti") +
@@ -17,11 +14,8 @@ const readline = require("readline");
       chalk.blue("\nGitHub: https://github.com/abhisekmaiti19") +
       chalk.magenta("\nLinkedIn: https://linkedin.com/in/abhisekmaiti19\n"),
   );
-
   const ROOT = process.cwd();
   const pkgPath = path.join(ROOT, "package.json");
-
-  // ---- Validate project root ----
   if (!fs.existsSync(pkgPath)) {
     console.log(chalk.red("❌ package.json not found."));
     console.log(
@@ -37,8 +31,6 @@ const readline = require("readline");
     console.log(chalk.red("❌ Failed to parse package.json"));
     process.exit(1);
   }
-
-  // ---- Validate Salesforce PWA Kit project ----
   const isPwaKit =
     userPkg.ccExtensibility &&
     userPkg.ccExtensibility.extends === "@salesforce/retail-react-app";
@@ -70,7 +62,6 @@ const readline = require("readline");
 
   console.log(chalk.green("✅ Salesforce PWA Kit project detected\n"));
 
-  // ---- Paths ----
   const WEBPACK_DEST = path.join(ROOT, "webpack.config.js");
   const POSTCSS_DEST = path.join(ROOT, "postcss.config.js");
 
@@ -88,8 +79,6 @@ const readline = require("readline");
  * LinkedIn: https://linkedin.com/in/abhisekmaiti19
  */
 `.trim();
-
-  // ---- Prompt helper ----
   function askYesNo(question) {
     const rl = readline.createInterface({
       input: process.stdin,
@@ -103,8 +92,6 @@ const readline = require("readline");
       });
     });
   }
-
-  // ---- Create or Replace logic (NO append) ----
   async function createOrReplace({ dest, template, filename }) {
     if (!fs.existsSync(dest)) {
       fs.writeFileSync(dest, `${BRAND}\n\n${template}`);
@@ -126,8 +113,6 @@ const readline = require("readline");
     fs.writeFileSync(dest, `${BRAND}\n\n${template}`);
     console.log(chalk.green(`✅ ${filename} replaced successfully`));
   }
-
-  // ---- Execute ----
   await createOrReplace({
     dest: WEBPACK_DEST,
     template: webpackTemplate,

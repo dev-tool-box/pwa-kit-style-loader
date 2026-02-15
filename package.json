@@ -1,12 +1,15 @@
 {
   "name": "pwa-style-loader",
-  "version": "4.0.0",
+  "version": "0.0.0",
   "description": "Vanilla CSS support for Salesforce PWA Kit (one-command setup)",
   "bin": {
-    "pwa-style-loader": "bin/init.js"
+    "pwa-style-loader": "dist/init.js"
+  },
+  "scripts": {
+    "build": "esbuild src/init.js --bundle --platform=node --outfile=dist/init.js"
   },
   "files": [
-    "bin",
+    "dist",
     "webpack.config.js",
     "postcss.config.js"
   ],
@@ -15,10 +18,7 @@
     "salesforce",
     "pwa-kit",
     "retail-react-app",
-    "webpack",
-    "css-loader",
-    "postcss",
-    "style-loader"
+    "webpack"
   ],
   "author": "Abhisek Maiti <abhisekmaiti19@gmail.com>",
   "license": "MIT",
@@ -37,6 +37,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.8"
+    "@changesets/cli": "^2.29.8",
+    "esbuild": "^0.27.3"
   }
 }
