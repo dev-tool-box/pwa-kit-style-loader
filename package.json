@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Vanilla CSS support for Salesforce PWA Kit (one-command setup)",
   "bin": {
-    "pwa-style-loader": "dist/init.js"
+    "pwa-kit-style-loader": "dist/init.js"
   },
   "scripts": {
     "build": "esbuild src/init.js --bundle --platform=node --outfile=dist/init.js"
