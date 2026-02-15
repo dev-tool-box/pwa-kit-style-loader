@@ -1,4 +1,4 @@
-# pwa-style-loader 🌩️
+# pwa-kit-style-loader 🌩️
 
 Enable vanilla CSS 🍦 support in Salesforce PWA Kit — instantly.
 
